@@ -4,26 +4,47 @@
         以下是当初写的设计思路，因为写的时候发现根本没法按当初瞎想的方法实现，所以实际实现的时候其实有些许不同。。。
 
 宏常量：
+
 #define CREATE 1			 //注册
+
 #define CREATEOK 2		 //注册成功
+
 #define CREATENO 3		 //注册用户已存在
+
 #define ONLINELOGIN 4		 //在线登录
+
 #define HIDINLOGIN 5		 //隐身登录
+
 #define LOGINOK 6			 //登录成功
+
 #define LOGINNOA 7		 //登录失败(密码错误)
+
 #define LOGINNOB 8		 //登录失败(账户不存在)
+
 #define ONLINE 11			 //在线状态更改:在线
+
 #define HIDING 22			 //在线状态更改:隐身
+
 #define OFFLINE 33			 //离线
+
 #define FRIEND 44			 //好友列表
+
 #define QUERY 55			 //查询
+
 #define ADDFRIEND 66		 //添加好友
+
 #define DELETE 77			 //删除好友(在线)
+
 #define DELETEOFF 88		 //删除好友(离线)
+
 #define SAY 99				 //离线消息
+
 #define PLEASENOW 111	 //好友请求(在线)
+
 #define PLEASEOFFLINE 222	 //好友请求(离线)
+
 #define FRIENDOK 333		 //好友请求同意
+
 #define FRIENDNO 444		 //好友请求拒绝
 
 结构体设计：
