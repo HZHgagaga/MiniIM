@@ -47,67 +47,113 @@
 
 #define FRIENDNO 444		 //好友请求拒绝
 
+
+
 结构体设计：
-(C/S)
-Stuct  PROTO{(每次发送的数据包，所有的事件)
+
+Stuct  PROTO(每次发送的数据包，所有的事件)
+
+{
+
 	int m_Event;
+
 	int m_Size;
+
 	char m_szData[];
+
 };
 
-(C/S)
+
 Struct MESSAGE（离线消息用结构体）
+
 {
+
 	char m_szID [20];
-char m_szFriend [20];
+
+	char m_szFriend [20];
+
 	char m_szMessage[235];
-};
-(C/S)
-Stuct  RELO{（注册登录所用结构体）
-char m_szID[20];
-char m_szPAW[20];
+
 };
 
-(S)
+
+Stuct  RELO（注册登录所用结构体）
+{
+
+	char m_szID[20];
+
+	char m_szPAW[20];
+
+};
+
+
 Struct  USERLIST（用于创建链表，存放所有的服务器在线和隐私的用户）
+
 {
+
 	char m_szID[20];
-int m_nState;
+
+	int m_nState;
+
 	char m_szIP[16];
+
 	unsignaed int m_uiPort;
+
 	USERLIST *m_pNext;
-USERLIST *m_pLast;
-FRIENDLIST *m_pHead;
-FRIENDLIST *m_pEnd;
+
+	USERLIST *m_pLast;
+
+	FRIENDLIST *m_pHead;
+
+	FRIENDLIST *m_pEnd;
+
 };
 
-(C/S)
+
 struct  FRIENDLIST(用于创建链表，存放好友列表，每一个用户都拥有一个此链表)
+
 {
+
 	char m_szID[20];
-int m_nState;
+
+	int m_nState;
+
 	char m_szIP[16];
+
 	unsignaed int m_uiPort;
+
 	FRIENDLIST *pLast;
-FRIENDLIST *pNext;
+
+	FRIENDLIST *pNext;
+
 };
 
-(C/S)
+
 Struct FRIENDOPERATE（好友操作用结构体，用于好友增删）
+
 {
+
 	char m_szUser[20];
+
 	char m_szFriend[20];
+
 };
 
-(C/S)
+
 Struct QUERYOK（查询结果）
+
 {
+
 	char m_szID [20];
-int m_nState;
+
+	int m_nState;
+
 };
+
+
 
 服务端：
-	与客户端以TCP的方式连接，在各个客户端打开后，与各个客户端保持连接，当客户端退出后，服务端与该客户端断开连接。每当登入成功一个用户，就会为该用户创建一个线程函数直到该用户登出，每当服务端读取数据包PROTO中的事件类型后，各个线程将会对其判断并且进行操作。
+与客户端以TCP的方式连接，在各个客户端打开后，与各个客户端保持连接，当客户端退出后，服务端与该客户端断开连接。每当登入成功一个用户，就会为该用户创建一个线程函数直到该用户登出，每当服务端读取数据包PROTO中的事件类型后，各个线程将会对其判断并且进行操作。
 
 注册模块：在客户端进行注册操作后，服务端会收到用户注册的标志信息（存储在RELO结构体中），服务端会将注册后的账号密码存储到存储着所有用户账号密码的文件中，并且会判断是否存在重复账户名，并会反馈给客户端。
 
@@ -130,11 +176,6 @@ int m_nState;
 删除好友模块(在线)：当服务端收到用户删除好友的标志信息与的需要删除的好友账户名信息后（内容将存储在一个成员为发出删除请求用户名、被删除用户名结构体中FRIENDOPERATE），收到该消息的线程会将自身存储着该用户的好友文件中删除该好友信息。然后判断需要删除的好友是否在线，若在线，所有用户线程判断被删除用户是否为自己，线程会在存储着该用户的好友文件中删除该好友信息。
 
 一对一聊天模块（离线）：当服务端收到离线消息的标志信息与的需要发送的目标账户名信息后（存储在MESSAGE结构体中），存入一个成员为用户名、信息内容的结构体中，为该用户创建一个专属的离线信息文件，将结构体内容以追加的方式存入文件。当有用户登入时，会读取该用户的离线信息文件，判断是否有信息，若有，则用send()函数发送，发送完后，文件内容将清空。
-
-
-
-
-
 
 
 
