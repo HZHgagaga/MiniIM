@@ -1,0 +1,212 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOGLOGIN DIALOG DISCARDABLE  0, 0, 230, 137
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "登录"
+FONT 10, "System"
+BEGIN
+    LTEXT           "请输入要登陆的用户名和密码",IDC_STATIC,57,20,106,11
+    EDITTEXT        IDC_EDITLOINGID,66,45,105,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITLOINGPWD,66,71,105,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "ID:",IDC_STATIC,53,47,10,12
+    LTEXT           "密码:",IDC_STATIC,45,73,18,12
+    PUSHBUTTON      "在线登录",IDC_LOGIN,41,101,43,14
+    PUSHBUTTON      "注册",IDC_CREATE,133,101,43,14
+    PUSHBUTTON      "更换",IDC_DARK,93,102,21,12
+END
+
+IDD_DIALOGCREATE DIALOG DISCARDABLE  0, 0, 184, 87
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "注册"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT1,56,20,96,12,ES_AUTOHSCROLL
+    LTEXT           "ID:",IDC_STATIC,42,21,12,12
+    EDITTEXT        IDC_EDIT2,56,39,96,12,ES_AUTOHSCROLL
+    LTEXT           "密码:",IDC_STATIC,33,40,20,12
+    PUSHBUTTON      "注册",IDC_CREATECREATE,69,62,37,12
+END
+
+IDD_IMMENUE DIALOG DISCARDABLE  0, 0, 196, 254
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "啊哈IM"
+FONT 10, "System"
+BEGIN
+    LTEXT           "在线好友:",IDC_NOWFRIEND,19,31,50,11
+    LISTBOX         IDC_LIST,19,44,73,150,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "在线状态:",IDC_STATIC,59,13,41,10
+    PUSHBUTTON      "在线",IDC_NOW,15,224,26,12
+    PUSHBUTTON      "隐身",IDC_NOWDARK,15,207,26,12
+    PUSHBUTTON      "查找",IDC_FIND,64,214,66,22
+    EDITTEXT        IDC_MYSTYLE,103,12,19,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "申请列表",IDC_BUTTONPLEASE,143,221,40,14
+    LISTBOX         IDC_LIST2,105,45,71,150,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "离线好友:",IDC_NOWFRIEND2,105,32,50,11
+END
+
+IDD_DIALOGFIND DIALOG DISCARDABLE  0, 0, 158, 157
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找用户"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "查询用户",IDC_FINDYES,53,108,46,15
+    LISTBOX         IDC_FINDSHOW,20,26,116,56,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITFIND,33,91,104,12,ES_AUTOHSCROLL
+    LTEXT           "ID:",IDC_STATIC,20,93,11,11
+    LTEXT           "查询结果:",IDC_STATIC,29,14,38,9
+    PUSHBUTTON      "添加好友",IDC_FINDADD,53,128,46,15
+END
+
+IDD_DIALOGSAY DIALOG DISCARDABLE  0, 0, 215, 245
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用户名"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDITSAYSHOW,18,21,180,171,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    EDITTEXT        IDC_EDITSAYINPUT,17,199,144,32,ES_MULTILINE
+    DEFPUSHBUTTON   "发送",IDC_SAYSEND,166,199,32,32
+    PUSHBUTTON      "删除好友",IDC_DELETE,85,7,34,12
+END
+
+IDD_DIALOGPLEASE DIALOG DISCARDABLE  0, 0, 152, 149
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "好友申请"
+FONT 10, "System"
+BEGIN
+    LISTBOX         IDC_PLEASELIST,27,9,94,99,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "同意",IDC_PLEASELISTOK,35,120,32,13
+    PUSHBUTTON      "拒绝",IDC_PLEASELISTNO,79,120,32,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOGLOGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_DIALOGCREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_IMMENUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 247
+    END
+
+    IDD_DIALOGFIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_DIALOGSAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+
+    IDD_DIALOGPLEASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 145
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 142
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
