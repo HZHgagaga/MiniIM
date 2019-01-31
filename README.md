@@ -51,104 +51,105 @@
 
 结构体设计：
 
-Stuct  PROTO(每次发送的数据包，所有的事件)
+	Stuct  PROTO(每次发送的数据包，所有的事件)
 
-{
+	{
 
-	int m_Event;
+		int m_Event;
 
-	int m_Size;
+		int m_Size;
 
-	char m_szData[];
+		char m_szData[];
 
-};
-
-
-Struct MESSAGE（离线消息用结构体）
-
-{
-
-	char m_szID [20];
-
-	char m_szFriend [20];
-
-	char m_szMessage[235];
-
-};
+	};
 
 
-Stuct  RELO（注册登录所用结构体）
-{
+	Struct MESSAGE（离线消息用结构体）
 
-	char m_szID[20];
+	{
 
-	char m_szPAW[20];
+		char m_szID [20];
 
-};
+		char m_szFriend [20];
 
+		char m_szMessage[235];
 
-Struct  USERLIST（用于创建链表，存放所有的服务器在线和隐私的用户）
-
-{
-
-	char m_szID[20];
-
-	int m_nState;
-
-	char m_szIP[16];
-
-	unsignaed int m_uiPort;
-
-	USERLIST *m_pNext;
-
-	USERLIST *m_pLast;
-
-	FRIENDLIST *m_pHead;
-
-	FRIENDLIST *m_pEnd;
-
-};
+	};
 
 
-struct  FRIENDLIST(用于创建链表，存放好友列表，每一个用户都拥有一个此链表)
+	Stuct  RELO（注册登录所用结构体）
+	
+	{
 
-{
+		char m_szID[20];
 
-	char m_szID[20];
+		char m_szPAW[20];
 
-	int m_nState;
-
-	char m_szIP[16];
-
-	unsignaed int m_uiPort;
-
-	FRIENDLIST *pLast;
-
-	FRIENDLIST *pNext;
-
-};
+	};
 
 
-Struct FRIENDOPERATE（好友操作用结构体，用于好友增删）
+	Struct  USERLIST（用于创建链表，存放所有的服务器在线和隐私的用户）
 
-{
+	{
 
-	char m_szUser[20];
+		char m_szID[20];
 
-	char m_szFriend[20];
+		int m_nState;
 
-};
+		char m_szIP[16];
+
+		unsignaed int m_uiPort;
+
+		USERLIST *m_pNext;
+
+		USERLIST *m_pLast;
+
+		FRIENDLIST *m_pHead;
+
+		FRIENDLIST *m_pEnd;
+
+	};
 
 
-Struct QUERYOK（查询结果）
+	struct  FRIENDLIST(用于创建链表，存放好友列表，每一个用户都拥有一个此链表)
 
-{
+	{
 
-	char m_szID [20];
+		char m_szID[20];
 
-	int m_nState;
+		int m_nState;
 
-};
+		char m_szIP[16];
+
+		unsignaed int m_uiPort;
+
+		FRIENDLIST *pLast;
+
+		FRIENDLIST *pNext;
+
+	};
+
+
+	Struct FRIENDOPERATE（好友操作用结构体，用于好友增删）
+
+	{
+
+		char m_szUser[20];
+
+		char m_szFriend[20];
+
+	};
+
+
+	Struct QUERYOK（查询结果）
+
+	{
+
+		char m_szID [20];
+
+		int m_nState;
+
+	};
 
 
 
